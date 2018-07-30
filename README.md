@@ -1,4 +1,4 @@
-Python Speech Recognizer with TensorFlow
+A python speech recognizer with TensorFlow
 =========================================
 some codes to implement an end-to-end CTC based speech recognition with pure python. <br />
 
