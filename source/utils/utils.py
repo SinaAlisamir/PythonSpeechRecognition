@@ -8,7 +8,6 @@ from six.moves import xrange as range
 import os
 import sys
 sys.path.append('../..')
-from source.utils.wagnerfischerpp import WagnerFischer
 import numpy as np
 
 url = 'https://catalog.ldc.upenn.edu/desc/addenda/'
@@ -37,18 +36,6 @@ def word_edit_distance(seq_orig, seq2, words):
         s2.append(words.index(seq))
     dist = EditDistance(s1,s2)#/len(s1)
     return dist
-
-def word_IDS_cost(seq_orig, seq2, words):
-    s1 = []; s2 = []
-    # words = list(bigram_LM.keys())
-    for seq in seq_orig:
-        s1.append(words.index(seq))
-    for seq in seq2:
-        s2.append(words.index(seq))
-    wag = WagnerFischer(s1,s2)
-    IDS = wag.IDS()
-    dist = wag.cost
-    return IDS, dist
 
 def download_progress_hook(count, blockSize, totalSize):
     """A hook to report the progress of a download. This is mostly intended for
